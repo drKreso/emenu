@@ -87,7 +87,7 @@ Be aware that I've monkey patched String class with "indent" method for my testi
 == TODO
 * Make click on a certain link do something (now it's only calling default controller that is persisting menu state) :(
 * Add quick links support that change according to main menu selection
-* Put autorisation hook that will enable complex authorisation rules for all menu items in one method
+* Put authorisation hook that will enable complex authorisation rules for all menu items in one method
 
 == Contributing to emenu
  
