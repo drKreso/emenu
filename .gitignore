@@ -46,3 +46,17 @@ pkg
 
 # For rubinius:
 #*.rbc
+
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+.DS_Store
+tmp/**/*
+*.*~
+*.swp
+*.swn
+*.swm
+*.swo
+solr/*
+public/assets
