@@ -62,8 +62,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionpack (~> 3.0.0)
-  active_support (~> 3.0.0)
+  actionpack
+  active_support
   bundler (~> 1.0.0)
   haml (~> 3.1.1)
   jeweler (~> 1.6.4)
