@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'menu_config'
 
 describe MenuConfig do
   
