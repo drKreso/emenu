@@ -3,7 +3,7 @@
 Simple gem that extracts logic needed for building effective and maintainable menus for complex enterprise scenarios.
 Use it if you have myriad of options and pervasive business (il)logic that depends on user role.
 
-Live example is at : http://emenu.12ip.net 
+Check out live example http://emenu.12ip.net 
 
 It builds menu presentation from configuration and persists state via hidden field. Primary goal is to hide as much as possible of the HTML/JQUERY ugliness from your tender eyes. Secondly it is important for me to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout.
 
