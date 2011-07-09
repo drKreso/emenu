@@ -3,32 +3,33 @@
 Simple gem that extacts logic needed for building effective and maintainable menus for complex enterprise scenarios.
 Use it if you have myrad of options and pervasive bussiness (il)logic that depends on user role.
 
-Live example is at : <a href="emenu.12ip.net">here</a>
+Live example is at : http://emenu.12ip.net
 
 It builds menu presentation from configuration and persits state via hidden field. Primary goal is to hide as much as possible of the HTML/JQUERY uglienes from your tender eyes. Secondly it is important for me to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout.
 
-config = MenuConfig.new
-config.menu :orders do
-  item :cars
-  item :trains do
-    item :fast_trains
-    item :slow_trains
-  end
-  item :planes do
-    item :boeing do
-      item :boeing747 do
-        item :older_ready_to_crash
-        item :brand_new
-      end
-      item :boeing474
+  config = MenuConfig.new
+  config.menu :orders do
+    item :cars
+    item :trains do
+      item :fast_trains
+      item :slow_trains
     end
-    item :airbus
+    item :planes do
+      item :boeing do
+        item :boeing747 do
+          item :older_ready_to_crash
+          item :brand_new
+        end
+        item :boeing474
+      end
+      item :airbus
+    end
   end
-end
 
 As you can see, multiple menu levels are enable and it's pretty easy to change menus. You can have separate sets of menu for different roles (this is usually enough). You can exclude some items based on authorisation rules since this is pure Ruby.
 
-item :fast_trains if @user == "admin"
+  item :fast_trains if @user == "admin"
+
 
 I need to put hook for enabling more complex type of authorisation, and also I need to enable defining quick link menu that depends on selected menu item.
 
@@ -37,11 +38,11 @@ So this is release eary as it gets since it is not even usable right now. I hope
 = Usage
 Put in your Gemfile
 
-gem 'emenu'
+  gem 'emenu'
 
 Then you need 
 
-bundle && rails g emenu:install
+  bundle && rails g emenu:install
 
 Be aware that I've monkey patched String class with "indent" method for my testing purposes. I am not proud of that but there it is.
 
