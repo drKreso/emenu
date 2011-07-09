@@ -28,7 +28,7 @@ It builds menu presentation from configuration and persits state via hidden fiel
 
 As you can see, multiple menu levels are enable and it's pretty easy to change menus. You can have separate sets of menu for different roles (this is usually enough). You can exclude some items based on authorisation rules since this is pure Ruby.
 
-  item :fast_trains if @user == "admin"
+  item :fast_trains if current_user.admin?
 
 In the view you need to use: (Not yet embeded in menu itself... sorry)
 

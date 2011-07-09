@@ -23,7 +23,7 @@ describe Menu do
     subject.add(:car)
     subject.items.count.should == 2
     subject.items.first.type.should == :menu
-    subject.items[1].type.should == :menu
+    subject.items.second.type.should == :menu
   end
 
   it 'should know subitems titles' do
@@ -88,7 +88,7 @@ describe Menu do
   it 'should generate valid haml for complex meni' do
     subject.add(:table)
     subject.add(:napkin)
-    subject.items[1].add(:cool_napkins)
+    subject.items.second.add(:cool_napkins)
     subject.add(:cars)
     subject.to_haml.should == <<-DEF.indent
                            %h6#h-menu-company
@@ -107,7 +107,7 @@ describe Menu do
   it 'should generate valid haml for complex opened meni' do
     subject.add(:table)
     subject.add(:napkin)
-    subject.items[1].add(:cool_napkins)
+    subject.items.second.add(:cool_napkins)
     subject.add(:cars)
     @config.open(:company)
     @config.open(:napkin)
@@ -133,8 +133,8 @@ describe Menu do
   it 'should generate valid haml for collapsible of collapsible meni' do
     subject.add(:table)
     subject.add(:napkin)
-    subject.items[1].add(:cool_napkins)
-    something = subject.items[1].add(:something)
+    subject.items.second.add(:cool_napkins)
+    something = subject.items.second.add(:something)
     something.add(:collapsible2)
     subject.add(:cars)
     subject.to_haml.should == <<-DEF.indent

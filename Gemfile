@@ -8,6 +8,7 @@ source "http://rubygems.org"
 #
 
 gem "haml", "3.1.1"
+gem "rails", ">= 3.0.3"
 
 group :development do
   gem "rspec", "~> 2.3.0"

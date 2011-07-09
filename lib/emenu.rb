@@ -1,3 +1,1 @@
-require 'menu'
-require 'menu_config'
-
+require 'rails/all'
