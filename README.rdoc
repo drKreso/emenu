@@ -30,17 +30,22 @@ As you can see, multiple menu levels are enable and it's pretty easy to change m
 
   item :fast_trains if @user == "admin"
 
+In the view you need to use: (Not yet embeded in menu itself... sorry)
+
+  =form_tag('/', :id => :menu_form) do
+    =hidden_field_tag :menu_state, @menu_state.to_json
+    =@menu_config.to_html
 
 I need to put hook for enabling more complex type of authorisation, and also I need to enable defining quick link menu that depends on selected menu item.
 
-So this is release eary as it gets since it is not even usable right now. I hope I'll relase often also and make this gem worthwile of your time.
+So this is release eary as it gets since it is not even usable right now. I hope I'll relase often also and make this gem worthwile your time.
 
 = Usage
 Put in your Gemfile
 
   gem 'emenu'
 
-Then you need 
+Then type in your console:
 
   bundle && rails g emenu:install  #install generator is not woring yet
 
@@ -48,8 +53,8 @@ Be aware that I've monkey patched String class with "indent" method for my testi
 
 == TODO
 * Make click on a certain link do something (now it's only calling default controller that is persisting menu state) :(
-* Add quick liks support that change according to main menu selection
-* Put autorisation hook that will enable integrating of one authorisation method for complex scenarios
+* Add quick links support that change according to main menu selection
+* Put autorisation hook that will enable complex authorisation rules for all menu items in one method
 
 == Contributing to emenu
  
