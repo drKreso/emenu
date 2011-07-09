@@ -7,7 +7,7 @@ source "http://rubygems.org"
 # Include everything needed to run rake, tests, features, etc.
 #
 
-gem "haml", '= 3.1.1'
+gem "haml"
 gem "rails", '= 3.0.3'
 
 group :development do
