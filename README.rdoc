@@ -7,8 +7,8 @@ Live example is at : http://emenu.12ip.net (not live yet...)
 
 It builds menu presentation from configuration and persits state via hidden field. Primary goal is to hide as much as possible of the HTML/JQUERY uglienes from your tender eyes. Secondly it is important for me to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout.
 
-  config = MenuConfig.new
-  config.menu :orders do
+  @menu = MenuConfig.new
+  @menu.item :orders do
     item :cars
     item :trains do
       item :fast_trains
@@ -34,7 +34,7 @@ In the view you need to use: (Not yet embeded in menu itself... sorry)
 
   =form_tag('/', :id => :menu_form) do
     =hidden_field_tag :menu_state, @menu_state.to_json
-    =@menu_config.to_html
+    =@menu.to_html
 
 I need to put hook for enabling more complex type of authorisation, and also I need to enable defining quick link menu that depends on selected menu item.
 
