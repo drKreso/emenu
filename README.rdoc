@@ -1,14 +1,14 @@
 = Enterprise menu
 
-Simple gem that extacts logic needed for building effective and maintainable menus for complex enterprise scenarios.
-Use it if you have myrad of options and pervasive bussiness (il)logic that depends on user role.
+Simple gem that extracts logic needed for building effective and maintainable menus for complex enterprise scenarios.
+Use it if you have myriad of options and pervasive business (il)logic that depends on user role.
 
-Live example is at : http://emenu.12ip.net (not live yet...)
+Live example is at : http://emenu.12ip.net 
 
-It builds menu presentation from configuration and persits state via hidden field. Primary goal is to hide as much as possible of the HTML/JQUERY uglienes from your tender eyes. Secondly it is important for me to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout.
+It builds menu presentation from configuration and persists state via hidden field. Primary goal is to hide as much as possible of the HTML/JQUERY ugliness from your tender eyes. Secondly it is important for me to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout.
 
   @menu = MenuConfig.new
-  @menu.item :orders do
+  @menu.item :transportation do
     item :cars
     item :trains do
       item :fast_trains
@@ -25,20 +25,53 @@ It builds menu presentation from configuration and persits state via hidden fiel
       item :airbus
     end
   end
+  @menu.item :orders do
+    item :bread
+    item :butter
+    item :chunky_bacon
+  end
 
 As you can see, multiple menu levels are enable and it's pretty easy to change menus. You can have separate sets of menu for different roles (this is usually enough). You can exclude some items based on authorisation rules since this is pure Ruby.
 
   item :fast_trains if current_user.admin?
 
-In the view you need to use: (Not yet embeded in menu itself... sorry)
+In the view you need to use: (Not yet embedded in menu itself... Sorry)
 
-  =form_tag('/', :id => :menu_form) do
-    =hidden_field_tag :menu_state, @menu_state.to_json
-    =@menu.to_html
+  .haml
+  #content
+   #left
+     =form_tag('/', :id => :menu_form) do
+       =hidden_field_tag :menu_state, @menu_state.to_json
+       =@menu.to_html
+
+  .html.erb
+  <div id="content">
+    <div id="left">
+      <%= form_tag('/', :id => :menu_form) do %>
+        <%= hidden_field_tag :menu_state, @menu_state.to_json %>
+        <%= @menu.to_html %>
+      <% end %>
+    </div>
+  </div>
+
+This is needed in controller:
+
+    @menu_state = {}
+    unless params[:menu_state].nil?
+      @menu_state = ActiveSupport::JSON.decode(params[:menu_state])
+      unless @menu_state.nil?
+        @menu_state.each do |key, value|
+          if key != "clicked_menu_key" && value == "opened"
+            @menu.open(key.to_sym)  
+          end
+        end
+        @menu.selected = @menu_state["clicked_menu_key"].to_sym
+      end
+    end
 
 I need to put hook for enabling more complex type of authorisation, and also I need to enable defining quick link menu that depends on selected menu item.
 
-So this is release eary as it gets since it is not even usable right now. I hope I'll relase often also and make this gem worthwile your time.
+So this is release early as it gets since it is not even usable right now. I hope I'll release often also and make this gem worthwhile your time.
 
 = Usage
 Put in your Gemfile
@@ -47,7 +80,7 @@ Put in your Gemfile
 
 Then type in your console:
 
-  bundle && rails g emenu:install  #install generator is not woring yet
+  bundle && rails g emenu:install  #install generator is not working yet
 
 Be aware that I've monkey patched String class with "indent" method for my testing purposes. I am not proud of that but there it is.
 
