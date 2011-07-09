@@ -1,5 +1,6 @@
-#include ActionView::Helpers::UrlHelper
 require 'haml'
+
+#include ActionView::Helpers::UrlHelper
 
 class MenuConfig
   attr_reader :config
