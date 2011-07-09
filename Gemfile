@@ -8,8 +8,8 @@ source "http://rubygems.org"
 #
 
 gem "haml", '~> 3.1.1'
-gem "active_support"
-gem "actionpack"
+gem "activesupport", '~> 3.0.3'
+gem "actionpack", '~> 3.0.3'
 
 group :development do
   gem "rspec-rails", "~> 2.3.0"
