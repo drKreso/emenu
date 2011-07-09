@@ -3,7 +3,7 @@
 Simple gem that extacts logic needed for building effective and maintainable menus for complex enterprise scenarios.
 Use it if you have myrad of options and pervasive bussiness (il)logic that depends on user role.
 
-Live example is at : http://emenu.12ip.net
+Live example is at : http://emenu.12ip.net (not live yet...)
 
 It builds menu presentation from configuration and persits state via hidden field. Primary goal is to hide as much as possible of the HTML/JQUERY uglienes from your tender eyes. Secondly it is important for me to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout.
 
@@ -42,14 +42,14 @@ Put in your Gemfile
 
 Then you need 
 
-  bundle && rails g emenu:install
+  bundle && rails g emenu:install  #install generator is not woring yet
 
 Be aware that I've monkey patched String class with "indent" method for my testing purposes. I am not proud of that but there it is.
 
 == TODO
-Make click on a certain link do something (now it's only calling default controller that is persisting menu state) :(
-Add quick liks support that change according to main menu selection
-Put autorisation hook that will enable integrating of one authorisation method for complex scenarios
+* Make click on a certain link do something (now it's only calling default controller that is persisting menu state) :(
+* Add quick liks support that change according to main menu selection
+* Put autorisation hook that will enable integrating of one authorisation method for complex scenarios
 
 == Contributing to emenu
  
