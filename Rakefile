@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "emenu"
   gem.homepage = "http://github.com/drKreso/emenu"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Enterprise class menus}
+  gem.description = %Q{Enterprise class menus with simple ruby based configuration, easy to make, easy to maintain}
   gem.email = "kresimir.bojcic@gmail.com"
   gem.authors = ["Kresimir Bojcic"]
   # dependencies defined in Gemfile
