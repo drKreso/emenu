@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{emenu}
-  s.version = "0.0.31"
+  s.version = "0.0.32"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Kresimir Bojcic}]
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
@@ -31,20 +32,6 @@ Gem::Specification.new do |s|
     "lib/emenu/string.rb",
     "lib/generators/emenu/USAGE",
     "lib/generators/emenu/install_generator.rb",
-    "lib/generators/emenu/templates/images/menu.png",
-    "lib/generators/emenu/templates/images/menu_arrow.png",
-    "lib/generators/emenu/templates/images/menu_border.png",
-    "lib/generators/emenu/templates/images/menu_l.png",
-    "lib/generators/emenu/templates/images/menu_l_selected.png",
-    "lib/generators/emenu/templates/images/menu_minus.png",
-    "lib/generators/emenu/templates/images/menu_plus.png",
-    "lib/generators/emenu/templates/images/menu_r.png",
-    "lib/generators/emenu/templates/images/menu_r_selected.png",
-    "lib/generators/emenu/templates/images/menu_selected.png",
-    "lib/generators/emenu/templates/javascript/emenu.js",
-    "lib/generators/emenu/templates/javascript/jquery-1.4.2.min.js",
-    "lib/generators/emenu/templates/stylesheets/emenu.css",
-    "lib/generators/emenu/templates/stylesheets/reset.css",
     "spec/menu_config_spec.rb",
     "spec/menu_spec.rb",
     "spec/spec_helper.rb"
