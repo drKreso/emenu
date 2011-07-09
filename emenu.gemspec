@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Kresimir Bojcic}]
   s.date = %q{2011-07-09}
-  s.description = %q{Build enterprise menu with ease}
+  s.description = %q{TODO: longer description of your gem}
   s.email = %q{kresimir.bojcic@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -26,7 +26,10 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "emenu.gemspec",
     "lib/emenu.rb",
+    "lib/emenu/menu.rb",
+    "lib/emenu/menu_config.rb",
     "spec/menu_config_spec.rb",
     "spec/menu_spec.rb",
     "spec/spec_helper.rb"
@@ -35,7 +38,7 @@ Gem::Specification.new do |s|
   s.licenses = [%q{MIT}]
   s.require_paths = [%q{lib}]
   s.rubygems_version = %q{1.8.5}
-  s.summary = %q{Configure your menu with internal Ruby DSL}
+  s.summary = %q{TODO: one-line summary of your gem}
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
