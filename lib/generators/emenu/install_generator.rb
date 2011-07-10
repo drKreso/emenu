@@ -35,9 +35,9 @@ module Emenu
       end
 
       def explain
-        puts "Enterprise menu is successfully installed"
-        puts "You need to link 'reset.css' and 'emenu.css' from layout file"
-        puts "You need to link 'jquery-1.4.2.min.js' and 'emenu.js' from layot file"
+        puts ""
+        puts "  You need to link 'reset.css' and 'emenu.css' from layout file"
+        puts "  You need to link 'jquery-1.4.2.min.js' and 'emenu.js' from layot file"
       end
     end  
 end
