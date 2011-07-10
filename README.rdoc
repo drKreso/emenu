@@ -1,11 +1,11 @@
-= Enterprise menu
+= Enterprise Menu
 
 Simple gem that extracts logic needed for building effective and maintainable menus for complex enterprise scenarios.
 Use it if you have myriad of options and pervasive business (il)logic that depends on user role.
 
-Live example can be checked out at http://emenu.12ip.net if my home based server is not down again. I suggest to open demo it in a new tab, otherwise prepare to click 'Back' button quite a few times.
+Live example can be checked out at http://emenu.12ip.net if my home based server is not down again. I suggest to open demo it in a new tab, otherwise prepare to click 'Back' quite a few times.
 
-It builds menu presentation from configuration and persists state via hidden field. Main goal is to hide as much as possible of the HTML/jQuery ugliness from your tender eyes. Evenly important, at least for me, is to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout.
+It builds menu presentation from configuration and persists state with really, really minimal session info and some jQuery posts. Main goal is to hide as much as possible of the HTML/jQuery ugliness from your tender eyes. Evenly important, at least for me, is to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout. Everythig elese I've checked didn't persist state of previously 'opened' menus so I had to make my own version.
 
   menu.item :transportation do
     item :cars
@@ -30,7 +30,7 @@ It builds menu presentation from configuration and persists state via hidden fie
     item :chunky_bacon
   end
 
-As you can see, multiple menu levels are enabled and it's pretty easy to change menus. You can have separate sets of menu for different roles (this is usually enough). You can exclude some items based on authorisation rules since this is pure Ruby.
+Multiple menu levels are enabled and it's pretty easy to manipulate menu structure. You can have separate sets of menu for different roles. You can exclude some items based on authorisation rules since this is pure Ruby.
 
   item :fast_trains if current_user.admin?
 
@@ -61,20 +61,21 @@ In the view you need to use:
     </div>
   </div>
 
-This is needed in ApplicationController
+Include Emenu in ApplicationController
 
-   ... 
-   include Emenu
+   class ApplicationController < ActionController::Base 
+    include Emenu
+    ...
 
-   #menu definition, this can be factory or whatever you need
-   #I am looking for a suitable place for this, but now it's housed in ApplicationController
-   def menu
-     menu = MenuConfig.new
-     menu.item :my_menu do
-       item :something
-     end
-     return menu
-   end
+    #I am looking for a suitable place for this, but for now it's housed in ApplicationController
+    def menu
+      menu = MenuConfig.new
+      menu.item :my_menu do
+        item :something
+      end
+      return menu
+    end
+  end
 
 This is needed in your layout file
 
@@ -86,7 +87,7 @@ This is needed in your layout file
   <%= stylesheet_link_tag 'reset.css', 'emenu.css'%>
   <%= javascript_include_tag 'jquery-1.4.2.min.js', 'emenu.js' %>
 
-Be aware that I've monkey patched String class with 'indent' method for my testing purposes. I am not proud of it so I had to come clean :)
+Be aware that I've monkey patched String class with 'indent' method for my testing purposes. 
 
 Theme used is small part of http://themeforest.net/item/smooth-admin/101529. It's just for demonstration and if you plan to use it in your projects you'll have to pay for it. Since you can already steel it from original theme page I don't think I am doing anything wrong including it as a demo. On the other hand the author has not yet given me permission to do so. All in all it might get a bit uglier if I have to make my own theme...
 
