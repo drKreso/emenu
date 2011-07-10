@@ -4,7 +4,7 @@ module Emenu
     class InstallGenerator < Rails::Generators::Base
       source_root File.expand_path('../templates', __FILE__)  
       def copy_images
-        directory 'images/emenu'
+        directory 'images', 'public/images/emenu'
       end
 
       def copy_javscript
@@ -13,8 +13,8 @@ module Emenu
       end
 
       def copy_stylesheets
-        copy_file 'stylesheets/emenu.cs', 'public/stylesheets/emenu.css'
-        copy_file 'stylesheets/reset.cs', 'public/stylesheets/reset.css'
+        copy_file 'stylesheets/emenu.css', 'public/stylesheets/emenu.css'
+        copy_file 'stylesheets/reset.css', 'public/stylesheets/reset.css'
       end
 
       def explain
