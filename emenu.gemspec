@@ -25,7 +25,6 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "emenu-0.0.34.gem",
     "emenu.gemspec",
     "lib/emenu.rb",
     "lib/emenu/menu.rb",
