@@ -3,9 +3,9 @@
 Simple gem that extracts logic needed for building effective and maintainable menus for complex enterprise scenarios.
 Use it if you have myriad of options and pervasive business (il)logic that depends on user role.
 
-Check out live example http://emenu.12ip.net 
+Live example can be checked out at http://emenu.12ip.net if my home based server is not down again. (I suggest to open demo it in a new window, otherwise prepare to click Back button quite a few times.)
 
-It builds menu presentation from configuration and persists state via hidden field. Primary goal is to hide as much as possible of the HTML/JQUERY ugliness from your tender eyes. Secondly it is important for me to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout.
+It builds menu presentation from configuration and persists state via hidden field. Main goal is to hide as much as possible of the HTML/jQuery ugliness from your tender eyes. Evenly important for me, is to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout.
 
   @menu = MenuConfig.new
   @menu.item :transportation do
@@ -94,11 +94,11 @@ This is needed in your layout file
 
 Be aware that I've monkey patched String class with "indent" method for my testing purposes. I am not proud of that but there it is.
 
-Theme used is small part of http://themeforest.net/item/smooth-admin/101529. It's just for demonstration and if you plan to use it in your projects you'll have to pay for it. Since you can already steel it from original theme page I don't think I am doing anything wrong including it as a demo. On the other hand the author has not yet given me permission to do so. All in all it might get a bit uglier if I have to make my own :)
+Theme used is small part of http://themeforest.net/item/smooth-admin/101529. It's just for demonstration and if you plan to use it in your projects you'll have to pay for it. Since you can already steel it from original theme page I don't think I am doing anything wrong including it as a demo. On the other hand the author has not yet given me permission to do so. All in all it might get a bit uglier if I have to make my own theme...
 
 
 == TODO
-* Make click on a certain link do something (now it's only calling default controller that is persisting menu state) :(
+* Make clicking on a certain link do something (now it's only calling default controller that is persisting menu state) :(
 * Add quick links support that change according to main menu selection
 * Put authorisation hook that will enable complex authorisation rules for all menu items in one method
 
