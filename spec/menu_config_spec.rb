@@ -71,4 +71,22 @@ describe MenuConfig do
                                   DEF
   end
 
+  it 'should generate valid html' do
+    subject.item :transportation do
+      item :cars
+    end
+    subject.to_html.should == <<-DEF.indent
+       <div id='menu'>
+         <h6 id='h-menu-transportation'>
+           <a href='#transportation'>
+             <span>Transportation</span>
+           </a>
+         </h6>
+         <ul class='closed' id='menu-transportation'>
+           <li><a href="#" onclick="submitMenu('cars')">Cars</a></li>
+         </ul>
+       </div>
+    DEF
+  end
+
 end

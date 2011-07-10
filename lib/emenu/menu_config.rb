@@ -1,10 +1,11 @@
 require 'haml'
 
-include ActionView::Helpers::UrlHelper
 
 class MenuConfig
   attr_reader :config
   attr_accessor :selected
+
+  include ActionView::Helpers::UrlHelper
 
   def initialize()
     @config = {}
@@ -37,7 +38,7 @@ class MenuConfig
   end
 
   def to_html
-    Haml::Engine.new(to_haml).render
+    Haml::Engine.new(to_haml).render(self)
   end
 
   def to_haml
