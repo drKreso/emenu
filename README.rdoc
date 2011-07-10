@@ -5,7 +5,7 @@ Use it if you have myriad of options and pervasive business (il)logic that depen
 
 Live example can be checked out at http://emenu.12ip.net. I suggest to open demo it in a new tab, otherwise prepare to click 'Back' quite a few times.
 
-It builds menu presentation from configuration and persists state with really, really minimal session info and some jQuery posts. Main goal is to hide as much as possible of the HTML/jQuery ugliness from your tender eyes. Evenly important, at least for me, is to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout. Everythig elese I've checked didn't persist state of previously 'opened' menus so I had to make my own version.
+It builds menu presentation from configuration and persists state with really, really minimal session info and some jQuery posts. Main goal is to hide as much as possible of the HTML/jQuery ugliness from your tender eyes. Evenly important, at least for me, is to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout. Everything else I've checked didn't persist state of previously 'opened' menus so I had to make my own version.
 
   menu.item :transportation do
     item :cars
@@ -39,7 +39,7 @@ I need to put hook for enabling more complex type of authorisation, and also I n
 WARNING : This is release early as it gets since it's almost not usable right now. I hope I'll deliver on second part to release often and make this gem worthwhile your time.
 
 = Usage
-Put in your Gemfile
+Put in your Gemfile:
 
   gem 'emenu'
 
@@ -47,7 +47,7 @@ Then type in your console:
 
   bundle && rails g emenu:install 
 
-In the view you need to use:
+Put this in layout:
 
   .haml
   #content
@@ -61,9 +61,9 @@ In the view you need to use:
     </div>
   </div>
 
-Include Emenu in ApplicationController
+Include Emenu in ApplicationController:
 
-   class ApplicationController < ActionController::Base 
+  class ApplicationController < ActionController::Base 
     include Emenu
     ...
 
@@ -77,7 +77,7 @@ Include Emenu in ApplicationController
     end
   end
 
-This is needed in your layout file
+Put this in layout:
 
   .haml
    = stylesheet_link_tag 'reset.css', 'emenu.css'
@@ -89,7 +89,7 @@ This is needed in your layout file
 
 Be aware that I've monkey patched String class with 'indent' method for my testing purposes. 
 
-Theme used is small part of http://themeforest.net/item/smooth-admin/101529. It's just for demonstration and if you plan to use it in your projects you'll have to pay for it. Since you can already steel it from original theme page I don't think I am doing anything wrong including it as a demo. On the other hand the author has not yet given me permission to do so. All in all it might get a bit uglier if I have to make my own theme...
+Theme used is small part of http://themeforest.net/item/smooth-admin/101529. It's just for demonstration and if you plan to use it in your projects you'll have to pay for it. Since you can already steel it from original theme page I don't think I am doing anything wrong including it as a demo. On the other hand the author has not given me permission to do so(yet). All in all it might get a bit uglier if I have to make my own theme...
 
 
 == TODO
