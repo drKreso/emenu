@@ -61,7 +61,7 @@ Put this in layout:
     </div>
   </div>
 
-Include Emenu in ApplicationController:
+Configure menu in ApplicationController:
 
   class ApplicationController < ActionController::Base 
     include Emenu
@@ -86,9 +86,6 @@ Put this in layout:
   .html.erb
   <%= stylesheet_link_tag 'reset.css', 'emenu.css'%>
   <%= javascript_include_tag 'jquery-1.4.2.min.js', 'emenu.js' %>
-
-Put this in routes.rb:
-  match 'emenu_state' => 'application#emenu_state'
 
 Be aware that I've monkey patched String class with 'indent' method for my testing purposes. 
 
