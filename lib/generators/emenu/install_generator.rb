@@ -18,14 +18,14 @@ module Emenu
       end
 
       def include_emenu_and_default_menu
-        inject_into_class "app/controllers/application_controller.rb", "  include Emenu\n"
         inject_into_class "app/controllers/application_controller.rb", ApplicationController do
-             "  def menu\n"
-             "    menu = MenuConfig.new\n"
-             "    menu.item :my_menu do\n"
-             "      item :something\n"
-             "    end\n"
-             "    return menu\n"
+             "  include Emenu\n\n" + 
+             "  def menu\n" + 
+             "    menu = MenuConfig.new\n" +
+             "    menu.item :my_menu do\n" +
+             "      item :something\n" +
+             "    end\n" +
+             "    return menu\n" +
              "  end\n"
         end
       end
