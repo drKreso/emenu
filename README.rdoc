@@ -7,8 +7,7 @@ Live example can be checked out at http://emenu.12ip.net if my home based server
 
 It builds menu presentation from configuration and persists state via hidden field. Main goal is to hide as much as possible of the HTML/jQuery ugliness from your tender eyes. Evenly important, at least for me, is to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout.
 
-  @menu = MenuConfig.new
-  @menu.item :transportation do
+  menu.item :transportation do
     item :cars
     item :trains do
       item :fast_trains
@@ -25,7 +24,7 @@ It builds menu presentation from configuration and persists state via hidden fie
       item :airbus
     end
   end
-  @menu.item :orders do
+  menu.item :orders do
     item :bread
     item :butter
     item :chunky_bacon
@@ -48,39 +47,34 @@ Then type in your console:
 
   bundle && rails g emenu:install 
 
-In the view you need to use: (Not yet embedded in menu itself... Sorry)
+In the view you need to use:
 
   .haml
   #content
    #left
-     =form_tag('/', :id => :menu_form) do
-       =hidden_field_tag :menu_state, @menu_state.to_json
-       =@menu.to_html
+     =@menu.to_html
 
   .html.erb
   <div id="content">
     <div id="left">
-      <%= form_tag('/', :id => :menu_form) do %>
-        <%= hidden_field_tag :menu_state, @menu_state.to_json %>
-        <%= @menu.to_html %>
-      <% end %>
+      <%= @menu.to_html %>
     </div>
   </div>
 
-This is needed in controller: (Also not hidden yet... Sorry)
+This is needed in ApplicationController
 
-    @menu_state = {}
-    unless params[:menu_state].nil?
-      @menu_state = ActiveSupport::JSON.decode(params[:menu_state])
-      unless @menu_state.nil?
-        @menu_state.each do |key, value|
-          if key != "clicked_menu_key" && value == "opened"
-            @menu.open(key.to_sym)  
-          end
-        end
-        @menu.selected = @menu_state["clicked_menu_key"].to_sym
-      end
-    end
+   ... 
+   include Emenu
+
+   #menu definition, this can be factory or whatever you need
+   #I am looking for a suitable place for this, but now it's housed in ApplicationController
+   def menu
+     menu = MenuConfig.new
+     menu.item :my_menu do
+       item :something
+     end
+     return menu
+   end
 
 This is needed in your layout file
 
@@ -92,13 +86,13 @@ This is needed in your layout file
   <%= stylesheet_link_tag 'reset.css', 'emenu.css'%>
   <%= javascript_include_tag 'jquery-1.4.2.min.js', 'emenu.js' %>
 
-Be aware that I've monkey patched String class with 'indent' method for my testing purposes. I am not proud of that but there it is.
+Be aware that I've monkey patched String class with 'indent' method for my testing purposes. I am not proud of it so I had to come clean :)
 
 Theme used is small part of http://themeforest.net/item/smooth-admin/101529. It's just for demonstration and if you plan to use it in your projects you'll have to pay for it. Since you can already steel it from original theme page I don't think I am doing anything wrong including it as a demo. On the other hand the author has not yet given me permission to do so. All in all it might get a bit uglier if I have to make my own theme...
 
 
 == TODO
-* Make clicking on a certain link do something (now it's only calling default controller that is persisting menu state) :(
+* Make clicking on a certain link do something (now it's only calling default controller that is persisting menu state) 
 * Add quick links support that change according to main menu selection
 * Put authorisation hook that will enable complex authorisation rules for all menu items in one method
 
