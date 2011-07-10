@@ -35,6 +35,19 @@ As you can see, multiple menu levels are enabled and it's pretty easy to change 
 
   item :fast_trains if current_user.admin?
 
+I need to put hook for enabling more complex type of authorisation, and also I need to enable defining quick link menu that depends on selected menu item.
+
+WARNING : This is release early as it gets since it's almost not usable right now. I hope I'll deliver on second part to release often and make this gem worthwhile your time.
+
+= Usage
+Put in your Gemfile
+
+  gem 'emenu'
+
+Then type in your console:
+
+  bundle && rails g emenu:install 
+
 In the view you need to use: (Not yet embedded in menu itself... Sorry)
 
   .haml
@@ -54,7 +67,7 @@ In the view you need to use: (Not yet embedded in menu itself... Sorry)
     </div>
   </div>
 
-This is needed in controller:
+This is needed in controller: (Also not hidden yet... Sorry)
 
     @menu_state = {}
     unless params[:menu_state].nil?
@@ -69,22 +82,19 @@ This is needed in controller:
       end
     end
 
-I need to put hook for enabling more complex type of authorisation, and also I need to enable defining quick link menu that depends on selected menu item.
+This is needed in your layout file
 
-So this is release early as it gets since it is not even usable right now. I hope I'll release often also and make this gem worthwhile your time.
+  .haml
+   = stylesheet_link_tag 'reset.css', 'emenu.css'
+   = javascript_include_tag 'jquery-1.4.2.min.js', 'emenu.js'
 
-= Usage
-Put in your Gemfile
-
-  gem 'emenu'
-
-Then type in your console:
-
-  bundle && rails g emenu:install 
+  .html.erb
+  <%= stylesheet_link_tag 'reset.css', 'emenu.css'%>
+  <%= javascript_include_tag 'jquery-1.4.2.min.js', 'emenu.js' %>
 
 Be aware that I've monkey patched String class with "indent" method for my testing purposes. I am not proud of that but there it is.
 
-Theme used is small part of http://themeforest.net/item/smooth-admin/101529. It's just for demonstration and if you plan to use it in your projects you'll have to pay for it. Since you can already steel it from original theme page I don't think I am doing anything wrong including it as a demo. On the other hand the author has not given me permission to do so. All in all it might get a bit uglier if I have to make my own :)
+Theme used is small part of http://themeforest.net/item/smooth-admin/101529. It's just for demonstration and if you plan to use it in your projects you'll have to pay for it. Since you can already steel it from original theme page I don't think I am doing anything wrong including it as a demo. On the other hand the author has not yet given me permission to do so. All in all it might get a bit uglier if I have to make my own :)
 
 
 == TODO
