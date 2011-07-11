@@ -17,16 +17,13 @@ module Emenu
         copy_file 'stylesheets/reset.css', 'public/stylesheets/reset.css'
       end
 
-      def include_emenu_and_default_menu
+      def copy_initializer
+        copy_file 'default_menus/emenus.rb', 'config/initializers/emenus.rb'
+      end
+
+      def include_emenu_into_application_controller
         inject_into_class "app/controllers/application_controller.rb", ApplicationController do
-             "  include Emenu\n\n" + 
-             "  def menu\n" + 
-             "    menu = MenuConfig.new\n" +
-             "    menu.item :my_menu do\n" +
-             "      item :something\n" +
-             "    end\n" +
-             "    return menu\n" +
-             "  end\n"
+             "  include Emenu\n"
         end
       end
 

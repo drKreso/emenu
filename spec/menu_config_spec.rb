@@ -89,4 +89,29 @@ describe MenuConfig do
     DEF
   end
 
+  it 'should know how to create menu config with static factory method' do
+    subject.item :transportation do
+        item :cars
+        item :trains do
+          item :fast_trains 
+          item :slow_trains
+        end
+    end
+    subject.item :orders do
+      item :bananas
+    end
+
+    MenuConfig.define do |meni|
+      meni.item :transportation do
+        item :cars
+        item :trains do
+          item :fast_trains 
+          item :slow_trains
+        end
+      end
+      meni.item :orders do
+        item :bananas
+      end
+    end.to_html.should == subject.to_html
+  end
 end

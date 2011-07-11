@@ -1,6 +1,5 @@
 require 'haml'
 
-
 class MenuConfig
   attr_reader :config
   attr_accessor :selected
@@ -10,6 +9,12 @@ class MenuConfig
   def initialize()
     @config = {}
     @opened = {}
+  end
+
+  def self.define(&block)
+    result = MenuConfig.new
+    block.call(result)
+    return result
   end
 
   def item(title, &block)
