@@ -38,9 +38,7 @@ It renders menu based on configuration and persists state with minimal session i
 * Separate sets of menu for different roles
 * Exclusion of menu items based on authorisation
 
-I need to put hook for enabling more complex type of authorisation, and also I need to enable defining quick link menu that depends on selected menu item.
-
-WARNING : This is release early as it gets since it's almost not usable right now. I hope I'll deliver on second part to release often and make this gem worthwhile your time.
+WARNING: This is release early as it gets so many things are missing. I am planing on releasing often to make this gem worthwhile your time.
 
 = Usage
 Put in your Gemfile:
