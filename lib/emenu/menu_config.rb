@@ -45,6 +45,7 @@ class MenuConfig
   def to_html
     Haml::Engine.new(to_haml).render(self)
   end
+  alias :render :to_html
 
   def to_haml
     @config.each_value.inject(header_haml) { |result, menu| result << menu.to_haml.split("\n").map { |token| Menu::DEFAULT_SPACE + token + "\n" }.join }
