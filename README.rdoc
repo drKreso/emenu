@@ -76,7 +76,7 @@ Put this in layout:
   <%= javascript_include_tag 'jquery-1.4.2.min.js', 'emenu.js' %>
 
 
-<b>Menu items can be changed in config/initializers/emenus.rb, make sure to restart the server after changes.</b>
+<b>Set up menu configuration in config/initializers/emenus.rb, make sure to restart the server after changes.</b>
 
 Be aware that I've monkey patched String class with 'indent' method for my testing purposes. 
 
