@@ -3,9 +3,9 @@
 module Emenu
   # menu method is uses as a hook to provide menu to render
   def menu
-    MenuConfig.define do
+    MenuConfig.define do |menu|
       #first menu group named Transportation
-      item :transportation do
+      menu.item :transportation do
         item :cars
         item :trains do
           item :fast_trains 
@@ -23,7 +23,7 @@ module Emenu
         end
       end
       #second menu group named Orders
-      item :orders do
+      menu.item :orders do
         item :bread
         item :butter
         item :chunky_bacon

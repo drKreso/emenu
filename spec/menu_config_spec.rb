@@ -119,15 +119,15 @@ describe MenuConfig do
       item :bananas
     end
 
-    MenuConfig.define do |meni|
-      meni.item :transportation do
+    MenuConfig.define do |menu|
+      menu.item :transportation do
         item :cars
         item :trains do
           item :fast_trains 
           item :slow_trains
         end
       end
-      meni.item :orders do
+      menu.item :orders do
         item :bananas
       end
     end.to_html.should == subject.to_html

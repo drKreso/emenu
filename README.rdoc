@@ -7,7 +7,7 @@ Live example can be checked out at http://emenu.12ip.net. I suggest to open demo
 
 It builds menu presentation from configuration and persists state with really, really minimal session info and some jQuery posts. Main goal is to hide as much as possible of the HTML/jQuery ugliness from your tender eyes. Evenly important, at least for me, is to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout. Everything else I've checked didn't persist state of previously 'opened' menus so I had to make my own version.
 
-  menu.item :transportation do
+  menu.item :transportation do 
     item :cars
     item :trains do
       item :fast_trains
@@ -52,30 +52,14 @@ Put this in layout:
   .haml
   #content
    #left
-     =@menu.to_html
+     =@menu.render
 
   .html.erb
   <div id="content">
     <div id="left">
-      <%= @menu.to_html %>
+      <%= @menu.render %>
     </div>
   </div>
-
-Configure menu in ApplicationController:
-
-  class ApplicationController < ActionController::Base 
-    include Emenu
-    ...
-
-    #I am looking for a suitable place for this, but for now it's housed in ApplicationController
-    def menu
-      menu = MenuConfig.new
-      menu.item :my_menu do
-        item :something
-      end
-      return menu
-    end
-  end
 
 Put this in layout:
 
@@ -86,6 +70,9 @@ Put this in layout:
   .html.erb
   <%= stylesheet_link_tag 'reset.css', 'emenu.css'%>
   <%= javascript_include_tag 'jquery-1.4.2.min.js', 'emenu.js' %>
+
+
+<b>Menu items can be changed in config/initializers/emenus.rb, make sure to restart the server after changes.</b>
 
 Be aware that I've monkey patched String class with 'indent' method for my testing purposes. 
 

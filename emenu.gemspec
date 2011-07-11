@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{emenu}
-  s.version = "0.1.6"
+  s.version = "0.1.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Kresimir Bojcic}]
-  s.date = %q{2011-07-10}
+  s.date = %q{2011-07-11}
   s.description = %q{Enterprise class menus with simple ruby based configuration, easy to make, easy to maintain}
   s.email = %q{kresimir.bojcic@gmail.com}
   s.extra_rdoc_files = [
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "emenu-0.1.7.gem",
     "emenu.gemspec",
     "lib/emenu.rb",
     "lib/emenu/menu.rb",
@@ -32,6 +33,7 @@ Gem::Specification.new do |s|
     "lib/emenu/string.rb",
     "lib/generators/emenu/USAGE",
     "lib/generators/emenu/install_generator.rb",
+    "lib/generators/emenu/templates/default_menus/emenus.rb",
     "lib/generators/emenu/templates/images/menu.png",
     "lib/generators/emenu/templates/images/menu_arrow.png",
     "lib/generators/emenu/templates/images/menu_border.png",
