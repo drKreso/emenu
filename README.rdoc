@@ -38,8 +38,6 @@ It builds menu presentation from configuration and persists state with minimal s
 * Separate sets of menu for different roles
 * Excluding of menu items based on authorisation
 
-  item :fast_trains if current_user.admin?
-
 I need to put hook for enabling more complex type of authorisation, and also I need to enable defining quick link menu that depends on selected menu item.
 
 WARNING : This is release early as it gets since it's almost not usable right now. I hope I'll deliver on second part to release often and make this gem worthwhile your time.
