@@ -36,7 +36,7 @@ It builds menu presentation from configuration and persists state with minimal s
 = Supported
 * Unlimited menu levels 
 * Separate sets of menu for different roles
-* Excluding of menu items based on authorisation
+* Exclusion of menu items based on authorisation
 
 I need to put hook for enabling more complex type of authorisation, and also I need to enable defining quick link menu that depends on selected menu item.
 
