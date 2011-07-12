@@ -40,19 +40,16 @@ class MenuConfig
   # set selected key, and also open up all parent nodes (in case we are going directly via link it makes sense to open up them
   def selected=(key)
     @selected = key
-    find(key).parents.each do |menu|
-      open menu.title
-    end
+    find(key).parents.each { |menu| open menu.title }
   end
 
   def find(key)
-    all_menus = []
-    @config.each_value { |menu| all_menus << menu.all_items }
-    all_menus = all_menus.compact.flatten
-    all_menus.each do |menu| 
-      return menu if menu.title == key
-    end
+    all_menus.each { |menu| return menu if menu.title == key }
     raise "Key #{key} not found in menu structure"
+  end
+
+  def all_menus
+    @config.each_value.inject([]) { |result, menu| result << menu.all_items }.flatten
   end
 
   def header_haml
