@@ -20,3 +20,9 @@ module Emenu
     base.before_filter :emenu
   end
 end
+
+module EmenuHelper
+  def menu_will_render
+    @menu.render
+  end
+end

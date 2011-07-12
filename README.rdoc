@@ -56,7 +56,7 @@ If you are using Haml, put this in layout:
   ...
   #content
    #left
-     =@menu.render
+     =menu_will_render
 
 Otherwise just put this in you layout:
 
@@ -65,7 +65,7 @@ Otherwise just put this in you layout:
   ...
   <div id="content">
     <div id="left">
-      <%= @menu.render %>
+      <%= menu_will_render %>
     </div>
   </div>
 
