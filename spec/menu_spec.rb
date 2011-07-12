@@ -154,5 +154,22 @@ describe Menu do
                              %li= link_to 'Cars', '#', :onclick => "submitMenu('cars')"
                            DEF
   end
+
+  it 'should enumerate all items' do
+    subject.add(:table)
+    subject.add(:napkin)
+    subject.items[1].add(:cool_napkins)
+    subject.all_items.count.should == 3
+  end
+
+  it 'should enumerate item parents' do
+    subject.add(:table)
+    subject.add(:napkin)
+    subject.items[1].add(:cool_napkins)
+    subject.parents.count.should == 0
+    subject.items[0].parents.count.should == 1
+    subject.items[1].items[0].parents.count.should == 2
+  end
+
 end
 

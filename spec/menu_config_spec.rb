@@ -3,6 +3,7 @@ require 'spec_helper'
 describe MenuConfig do
   
   it 'should know how to mark selected menu' do
+    subject.item :djuka
     subject.selected = :djuka
     subject.selected.should == :djuka
   end
@@ -13,6 +14,19 @@ describe MenuConfig do
     subject.opened?(:djuka).should == true
     subject.opened?(:marko).should == true
     subject.opened?(:petar).should == false
+  end
+
+  it 'should open all parent nodes when child is selected' do
+    subject.item :products do
+      item :napkin do
+        item :cool_napkin
+      end
+    end
+    subject.opened?(:products).should == false
+    subject.opened?(:napkin).should == false
+    subject.selected = :cool_napkin
+    subject.opened?(:products).should == true
+    subject.opened?(:napkin).should == true 
   end
 
   it 'should know to add menu' do

@@ -76,4 +76,17 @@ class Menu
     spacing + DEFAULT_SPACE
   end
 
+  def all_items
+    items.inject([self]) { |result, menu| result << menu.all_items }
+  end
+
+  def parents
+    result = []
+    unless @parent.nil?
+      result << @parent
+      result << @parent.parents unless @parent.parents == []
+    end
+    return result.flatten
+  end
+
 end
