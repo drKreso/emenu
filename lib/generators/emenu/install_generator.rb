@@ -21,9 +21,8 @@ module Emenu
         copy_file 'default_menus/emenus.rb', 'config/initializers/emenus.rb'
       end
 
-      def include_emenu_into_application_controller_and_helper
+      def include_emenu_into_application_controller
         inject_into_class "app/controllers/application_controller.rb", ApplicationController,  "  include Emenu\n"
-        inject_into_class "app/helpers/application_helper.rb", ApplicationHelper,  "  include EmenuHelper\n"
       end
 
       def add_route
