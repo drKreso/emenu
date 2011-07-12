@@ -5,7 +5,6 @@ require 'emenu/menu.rb'
 require 'emenu/menu_config.rb'
 
 module Emenu
-  EMenu::Helper.include
 
   def emenu_state
     session[:menu_state] ||= {}
@@ -24,12 +23,8 @@ module Emenu
 
 end
 
-module Emenu::Helper
-  def self.include
-    module ApplicationHelper
-      define_method :menu_will_render do
-        @menu.render
-      end
-    end
+module ApplicationHelper
+  def menu_will_render
+    @menu.render
   end
 end
