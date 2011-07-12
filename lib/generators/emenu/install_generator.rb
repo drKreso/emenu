@@ -22,8 +22,8 @@ module Emenu
       end
 
       def include_emenu_into_application_controller_and_helper
-        inject_into_class "app/controllers/application_controller.rb", ApplicationController  "  include Emenu\n"
-        inject_into_class "app/helpers/application_helper.rb", ApplicationController  "  include EmenuHelper\n"
+        inject_into_class "app/controllers/application_controller.rb", ApplicationController,  "  include Emenu\n"
+        inject_into_class "app/helpers/application_helper.rb", ApplicationController,  "  include EmenuHelper\n"
       end
 
       def add_route
