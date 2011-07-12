@@ -49,30 +49,25 @@ Then type in your console:
 
   bundle && rails g emenu:install 
 
-Put this in layout:
+If you are using Haml, put this in layout:
 
-  .haml
+  = stylesheet_link_tag 'reset.css', 'emenu.css'
+  = javascript_include_tag 'jquery-1.4.2.min.js', 'emenu.js'
+  ...
   #content
    #left
      =@menu.render
 
-  .html.erb
+Otherwise just put this in you layout:
+
+  <%= stylesheet_link_tag 'reset.css', 'emenu.css'%>
+  <%= javascript_include_tag 'jquery-1.4.2.min.js', 'emenu.js' %>
+  ...
   <div id="content">
     <div id="left">
       <%= @menu.render %>
     </div>
   </div>
-
-Put this in layout:
-
-  .haml
-   = stylesheet_link_tag 'reset.css', 'emenu.css'
-   = javascript_include_tag 'jquery-1.4.2.min.js', 'emenu.js'
-
-  .html.erb
-  <%= stylesheet_link_tag 'reset.css', 'emenu.css'%>
-  <%= javascript_include_tag 'jquery-1.4.2.min.js', 'emenu.js' %>
-
 
 <b>Set up menu configuration in config/initializers/emenus.rb, make sure to restart the server after changes.</b>
 
