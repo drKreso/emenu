@@ -14,9 +14,9 @@ module Emenu
 
   def emenu 
     @menu = menu
+    @menu.selected = selected_key unless selected_key.nil?
     session[:menu_state].each { |key, value| @menu.open(key.to_sym) if value == "opened"} unless session[:menu_state].nil?
     selected_key = @menu.find_path(request.env['PATH_INFO'])
-    @menu.selected = selected_key unless selected_key.nil?
   end
 
   def self.included(base)
