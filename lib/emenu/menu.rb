@@ -14,7 +14,7 @@ class Menu
     @type = @parent.nil? ? :title : :menu 
   end
 
-  def item(name, &block)
+  def item(name, path="#",  &block)
     current = self.add(name)
     current.instance_eval(&block) unless block.nil?
   end
