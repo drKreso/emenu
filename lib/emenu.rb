@@ -16,6 +16,7 @@ module Emenu
     @menu = menu
     selected_key = @menu.find_path(request.env['PATH_INFO'])
     unless selected_key.nil?
+      aaaa
       @menu.selected = selected_key 
       @menu.find(selected_key).parents.each { |menu| session[:menu_state][menu.title] = "opened" }
     end
