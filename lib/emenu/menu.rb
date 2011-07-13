@@ -44,7 +44,7 @@ class Menu
   end
 
   def menu_haml
-    "#{spacing}%li#{selected? ? '{ :class => "selected" }' : ""}= link_to '#{humanized_title}', '#'\n"
+    "#{spacing}%li#{selected? ? '{ :class => "selected" }' : ""}= link_to '#{humanized_title}', '#{@path}'\n"
   end
 
   def collapsible_menu_haml
