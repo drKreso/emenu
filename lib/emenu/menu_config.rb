@@ -48,6 +48,11 @@ class MenuConfig
     raise "Key #{key} not found in menu structure"
   end
 
+  def find_path(key)
+    all_menus.each { |menu| return menu.title if menu.path == key }
+    return nil
+  end
+
   def all_menus
     @config.each_value.inject([]) { |result, menu| result << menu.all_items }.flatten
   end
