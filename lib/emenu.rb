@@ -13,6 +13,7 @@ module Emenu
   end
 
   def emenu 
+    session[:menu_state] ||= {}
     @menu = menu
     selected_key = @menu.find_path(request.env['PATH_INFO'])
     unless selected_key.nil?
