@@ -60,8 +60,8 @@ describe Menu do
                              %a{ :href => '#company'}
                                %span Company
                            %ul#menu-company.closed
-                             %li= link_to 'Table', '#', :onclick => "submitMenu('table')"
-                             %li= link_to 'Napkin', '#', :onclick => "submitMenu('napkin')"
+                             %li= link_to 'Table', '#'
+                             %li= link_to 'Napkin', '#'
                            DEF
   end
 
@@ -79,8 +79,8 @@ describe Menu do
                              %a{ :href => '#company'}
                                %span Company
                            %ul#menu-company.opened
-                             %li= link_to 'Table', '#', :onclick => "submitMenu('table')"
-                             %li{ :class => "selected" }= link_to 'Napkin', '#', :onclick => "submitMenu('napkin')"
+                             %li= link_to 'Table', '#'
+                             %li{ :class => "selected" }= link_to 'Napkin', '#'
                            DEF
   end
 
@@ -95,12 +95,12 @@ describe Menu do
                              %a{ :href => '#company'}
                                %span Company
                            %ul#menu-company.closed
-                             %li= link_to 'Table', '#', :onclick => "submitMenu('table')"
+                             %li= link_to 'Table', '#'
                              %li.collapsible
                                %a{ :href => '#', :class => 'collapsible plus'} Napkin
                                %ul#napkin.collapsed
-                                 %li= link_to 'Cool napkins', '#', :onclick => "submitMenu('cool_napkins')"
-                             %li= link_to 'Cars', '#', :onclick => "submitMenu('cars')"
+                                 %li= link_to 'Cool napkins', '#'
+                             %li= link_to 'Cars', '#'
                            DEF
   end
 
@@ -121,12 +121,12 @@ describe Menu do
                              %a{ :href => '#company'}
                                %span Company
                            %ul#menu-company.opened
-                             %li= link_to 'Table', '#', :onclick => "submitMenu('table')"
+                             %li= link_to 'Table', '#'
                              %li.collapsible
                                %a{ :href => '#', :class => 'collapsible minus'} Napkin
                                %ul#napkin.expanded
-                                 %li{ :class => "selected" }= link_to 'Cool napkins', '#', :onclick => "submitMenu('cool_napkins')"
-                             %li= link_to 'Cars', '#', :onclick => "submitMenu('cars')"
+                                 %li{ :class => "selected" }= link_to 'Cool napkins', '#'
+                             %li= link_to 'Cars', '#'
                            DEF
   end
 
@@ -142,16 +142,16 @@ describe Menu do
                              %a{ :href => '#company'}
                                %span Company
                            %ul#menu-company.closed
-                             %li= link_to 'Table', '#', :onclick => "submitMenu('table')"
+                             %li= link_to 'Table', '#'
                              %li.collapsible
                                %a{ :href => '#', :class => 'collapsible plus'} Napkin
                                %ul#napkin.collapsed
-                                 %li= link_to 'Cool napkins', '#', :onclick => "submitMenu('cool_napkins')"
+                                 %li= link_to 'Cool napkins', '#'
                                  %li.collapsible
                                    %a{ :href => '#', :class => 'collapsible plus'} Something
                                    %ul#something.collapsed
-                                     %li= link_to 'Collapsible2', '#', :onclick => "submitMenu('collapsible2')"
-                             %li= link_to 'Cars', '#', :onclick => "submitMenu('cars')"
+                                     %li= link_to 'Collapsible2', '#'
+                             %li= link_to 'Cars', '#'
                            DEF
   end
 

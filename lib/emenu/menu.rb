@@ -6,21 +6,22 @@ class Menu
 
   attr_reader :title, :items, :type
 
-  def initialize(title, parent, config)
+  def initialize(title, parent, config, path="#")
     @title = title
     @parent = parent
     @config = config
+    @path = path
     @items = []
     @type = @parent.nil? ? :title : :menu 
   end
 
   def item(name, path="#",  &block)
-    current = self.add(name)
+    current = self.add(name,path)
     current.instance_eval(&block) unless block.nil?
   end
 
-  def add(item_name, &block)
-    items << Menu.new(item_name, self, @config)
+  def add(item_name, path="#", &block)
+    items << Menu.new(item_name, self, @config, path)
     @type = :collapsible_menu if @type == :menu # when we add subitems to menu it becomes collapsible menu
     instance_eval(&block) unless block.nil?
     MenuConfig.enforce_uniqueness names
@@ -43,7 +44,7 @@ class Menu
   end
 
   def menu_haml
-    "#{spacing}%li#{selected? ? '{ :class => "selected" }' : ""}= link_to '#{humanized_title}', '#', :onclick => \"submitMenu('#{@title}')\"\n"
+    "#{spacing}%li#{selected? ? '{ :class => "selected" }' : ""}= link_to '#{humanized_title}', '#'\n"
   end
 
   def collapsible_menu_haml

@@ -76,12 +76,12 @@ describe MenuConfig do
                                         %a{ :href => '#company'}
                                           %span Company
                                       %ul#menu-company.closed
-                                        %li= link_to 'Napkin', '#', :onclick => "submitMenu('napkin')"
+                                        %li= link_to 'Napkin', '#'
                                       %h6#h-menu-better_company
                                         %a{ :href => '#better_company'}
                                           %span Better company
                                       %ul#menu-better_company.closed
-                                        %li= link_to 'Cars', '#', :onclick => "submitMenu('cars')"
+                                        %li= link_to 'Cars', '#'
                                   DEF
   end
 
@@ -97,7 +97,7 @@ describe MenuConfig do
            </a>
          </h6>
          <ul class='closed' id='menu-transportation'>
-           <li><a href="#" onclick="submitMenu('cars')">Cars</a></li>
+           <li><a href="#">Cars</a></li>
          </ul>
        </div>
     DEF
@@ -115,7 +115,7 @@ describe MenuConfig do
            </a>
          </h6>
          <ul class='closed' id='menu-transportation'>
-           <li><a href="#" onclick="submitMenu('cars')">Cars</a></li>
+           <li><a href="#">Cars</a></li>
          </ul>
        </div>
     DEF
