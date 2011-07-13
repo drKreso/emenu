@@ -65,7 +65,7 @@ describe MenuConfig do
 
   it 'should generate valid #menu tag and move menus for spacing to the right' do
     subject.item :company do
-      item :napkin
+      item :napkin, '/napkin'
     end
     subject.item :better_company do
       item :cars
@@ -76,7 +76,7 @@ describe MenuConfig do
                                         %a{ :href => '#company'}
                                           %span Company
                                       %ul#menu-company.closed
-                                        %li= link_to 'Napkin', '#'
+                                        %li= link_to 'Napkin', '/napkin'
                                       %h6#h-menu-better_company
                                         %a{ :href => '#better_company'}
                                           %span Better company
