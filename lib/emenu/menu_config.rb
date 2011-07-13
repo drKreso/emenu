@@ -40,7 +40,10 @@ class MenuConfig
   # set selected key, and also open up all parent nodes (in case we are going directly via link it makes sense to open up them
   def selected=(key)
     @selected = key
-    find(key).parents.each { |menu| open menu.title }
+    find(key).parents.each do |menu|
+      session[:menu_state][menu.title] = "opened"
+      open menu.title 
+    end
   end
 
   def find(key)
