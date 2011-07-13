@@ -4,7 +4,7 @@ class Menu
   SPACE = " "
   DEFAULT_SPACE = SPACE*IDENTATION
 
-  attr_reader :title, :items, :type
+  attr_reader :title, :items, :type, :path
 
   def initialize(title, parent, config, path="#")
     @title = title
