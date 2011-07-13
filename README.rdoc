@@ -6,7 +6,7 @@ Use it if you:
 * have myriad of options to cover
 * have complex business (il)logic that depends on user role
 
-Live example can be tried at http://emenu.12ip.net. Open it in a new tab or otherwise prepare to click 'Back' quite a few times.
+Live example can be tried at http://emenu.12ip.net/cars. Open it in a new tab or otherwise prepare to click 'Back' quite a few times.
 
 It renders menu based on configuration and persists state with minimal session info and some tiny jQuery posts. Main goal is to hide as much as possible of the HTML/jQuery ugliness from your tender eyes. Evenly important, at least for me, is to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout.
 
