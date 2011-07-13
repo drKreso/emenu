@@ -79,7 +79,6 @@ Theme used is small part of http://themeforest.net/item/smooth-admin/101529. It'
 Be aware that I've monkey patched String class with 'indent' method for my testing purposes. 
 
 == TODO
-* Make clicking on a certain link actually do something
 * Add quick links support that change according to main menu selection
 * Put authorisation hook that will enable complex authorisation rules for all menu items in one method
 
