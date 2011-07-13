@@ -18,7 +18,7 @@ module Emenu
       end
 
       def copy_initializer
-        copy_file 'default_menus/emenus.rb', 'config/initializers/emenus.rb'
+        copy_file 'default_menu/navigation.rb', 'app/navigation/navigation.rb'
       end
 
       def include_emenu_into_application_controller

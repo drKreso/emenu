@@ -1,6 +1,4 @@
-# Be sure to restart your server if you modify this file
-
-module Emenu
+module Navigation
   # menu method is uses as a hook to provide menu to render
   def menu
     MenuConfig.define do |menu|

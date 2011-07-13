@@ -60,7 +60,7 @@ If you are using Haml, put this in layout:
    #left
      =menu_will_render
 
-Otherwise just put this in you layout:
+Otherwise put this in you layout:
 
   <%= stylesheet_link_tag 'reset.css', 'emenu.css'%>
   <%= javascript_include_tag 'jquery-1.4.2.min.js', 'emenu.js' %>
@@ -71,7 +71,11 @@ Otherwise just put this in you layout:
     </div>
   </div>
 
-<b>Set up menu configuration in config/initializers/emenus.rb, make sure to restart the server after changes.</b>
+Add app/navigation to your autoload paths:
+
+  config.autoload_paths += %W(#{config.root}/app/navigation)
+
+<b>Set up menu configuration in app/navigation/navigation.rb and you are ready to go.</b>
 
 == Gotchas
 Theme used is small part of http://themeforest.net/item/smooth-admin/101529. It's just for demonstration and if you plan to use it in your projects you'll have to pay for it. Since you can already steel it from original theme page I don't think I am doing anything wrong including it as a demo. On the other hand the author has not given me permission to do so(yet). All in all it might get a bit uglier if I have to make my own theme...

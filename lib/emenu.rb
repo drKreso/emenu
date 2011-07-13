@@ -25,12 +25,13 @@ module Emenu
 
   def self.included(base)
     base.before_filter :emenu
+    base.send :helper_method, :menu_will_render
+    base.module_eval { include Navigation } 
   end
 
-end
-
-module ApplicationHelper
   def menu_will_render
     @menu.render
   end
+
 end
+
