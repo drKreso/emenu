@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{emenu}
-  s.version = "0.4.0"
+  s.version = "0.4.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Kresimir Bojcic}]
@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
     "lib/emenu/string.rb",
     "lib/generators/emenu/USAGE",
     "lib/generators/emenu/install_generator.rb",
-    "lib/generators/emenu/templates/default_menus/emenus.rb",
+    "lib/generators/emenu/templates/default_menu/navigation.rb",
     "lib/generators/emenu/templates/images/menu.png",
     "lib/generators/emenu/templates/images/menu_arrow.png",
     "lib/generators/emenu/templates/images/menu_border.png",
