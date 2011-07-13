@@ -3,6 +3,8 @@ require 'rails/generators'
 module Emenu
     class InstallGenerator < Rails::Generators::Base
       source_root File.expand_path('../templates', __FILE__)  
+
+
       def copy_images
         directory 'images', 'public/images/emenu'
       end
@@ -16,13 +18,15 @@ module Emenu
         copy_file 'stylesheets/emenu.css', 'public/stylesheets/emenu.css'
         copy_file 'stylesheets/reset.css', 'public/stylesheets/reset.css'
       end
-
-      def copy_initializer
+      
+      def copy_default_menu
         copy_file 'default_menu/navigation.rb', 'app/navigation/navigation.rb'
       end
 
       def include_emenu_into_application_controller
+        $install = true
         inject_into_class "app/controllers/application_controller.rb", ApplicationController,  "  include Emenu\n"
+        $install = false
       end
 
       def add_route

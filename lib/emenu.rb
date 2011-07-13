@@ -26,7 +26,7 @@ module Emenu
   def self.included(base)
     base.before_filter :emenu
     base.send :helper_method, :menu_will_render
-    base.module_eval { include Navigation } 
+    base.module_eval { include Navigation } unless $install == true
   end
 
   def menu_will_render
