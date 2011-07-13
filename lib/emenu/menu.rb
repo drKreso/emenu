@@ -7,8 +7,6 @@ class Menu
   attr_reader :title, :items, :type, :path
 
   def initialize(title, parent, config, path="#")
-
-      aaaa
     @title = title
     @parent = parent
     @config = config
@@ -31,6 +29,7 @@ class Menu
   end
 
   def names
+    bbb
     items.inject([@title.to_s]) { |result, item| result << item.names }
   end
 
