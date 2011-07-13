@@ -7,6 +7,8 @@ class Menu
   attr_reader :title, :items, :type, :path
 
   def initialize(title, parent, config, path="#")
+
+      aaaa
     @title = title
     @parent = parent
     @config = config
