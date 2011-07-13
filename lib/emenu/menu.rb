@@ -82,7 +82,6 @@ class Menu
   end
 
   def parents
-    bbbb
     result = []
     unless @parent.nil?
       result << @parent
