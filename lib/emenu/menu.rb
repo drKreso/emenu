@@ -29,7 +29,6 @@ class Menu
   end
 
   def names
-    bbb
     items.inject([@title.to_s]) { |result, item| result << item.names }
   end
 
@@ -83,6 +82,7 @@ class Menu
   end
 
   def parents
+    bbbb
     result = []
     unless @parent.nil?
       result << @parent
