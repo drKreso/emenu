@@ -1,3 +1,5 @@
+include Rails.application.routes.url_helpers
+
 module Navigation
   # menu method is uses as a hook to provide menu to render
   def menu

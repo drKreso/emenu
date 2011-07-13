@@ -5,6 +5,7 @@ require 'emenu/menu.rb'
 require 'emenu/menu_config.rb'
 
 module Emenu
+  
 
   def emenu_state
     session[:menu_state] ||= {}

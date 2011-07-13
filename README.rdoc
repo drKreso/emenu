@@ -11,27 +11,27 @@ Live example can be tried at http://emenu.12ip.net/cars. Open it in a new tab or
 It renders menu based on configuration and persists state with minimal session info and some tiny jQuery posts. Main goal is to hide as much as possible of the HTML/jQuery ugliness from your tender eyes. Evenly important, at least for me, is to make you balls-of-brass-kind-of-guy when customer is asking for yet another exception/addition in menu layout.
 
   menu.item :transportation do
-    item :cars, '/cars'
+    item :cars, cars_path
     item :trains do
-      item :fast_trains , '/fast_trains'
-      item :slow_trains, '/slow_trains'
+      item :fast_trains , fast_trains_path
+      item :slow_trains, slow_trains_path
     end
     item :planes do
       item :boeing do
         item :boeing747 do
-          item :older_ready_to_crash, '/older_ready_to_crash'
-          item :brand_new, '/brand_new'
+          item :older_ready_to_crash, older_ready_to_crash_path
+          item :brand_new, brand_new_path
         end
-        item :boeing474, '/boeing474'
+        item :boeing474, boeing474_path
       end
-      item :airbus, '/airbus'
+      item :airbus, airbus_path
     end
   end
   #second menu group named Orders
   menu.item :orders do
-    item :bread, '/bread'
-    item :butter, '/butter'
-    item :chunky_bacon, '/chunky_bacon'
+    item :bread, bread_path
+    item :butter, butter_path
+    item :chunky_bacon, chunky_bacon_path
   end
 end
 
