@@ -45,7 +45,7 @@ WARNING: This is release early as it gets so many things are missing. I am plani
 = Usage
 Put in your Gemfile:
 
-  gem 'emenu' , :git => 'git@github.com:drKreso/emenu.git'
+  gem 'emenu'
 
 Then type in your console:
 
