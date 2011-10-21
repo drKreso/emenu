@@ -12,7 +12,7 @@ class Menu
     @config = config
     @path = path
     @items = []
-    @type = @parent.nil? ? :title : :menu 
+    @type = @parent.nil? ? :title : :menu
   end
 
   def item(name, path="#",  &block)
@@ -40,7 +40,7 @@ class Menu
     "#{spacing}%h6#h-menu-#{@title}#{opened? ? '{ :class => "selected" }' : ""}\n" <<
     "#{spacing_subitem}%a{ :href => '##{@title}'}\n" <<
     "#{spacing_subitem*2}%span #{humanized_title}\n" <<
-    "%ul#menu-#{@title}.#{opened? ? "opened" : "closed"}\n" 
+    "%ul#menu-#{@title}.#{opened? ? "opened" : "closed"}\n"
   end
 
   def menu_haml
@@ -72,7 +72,7 @@ class Menu
   def spacing
     SPACE*indent
   end
-  
+
   def spacing_subitem
     spacing + DEFAULT_SPACE
   end
