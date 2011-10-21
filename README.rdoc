@@ -36,7 +36,7 @@ It renders menu based on configuration and persists state with minimal session i
 end
 
 = Supported
-* Unlimited menu levels 
+* Unlimited menu levels
 * Separate sets of menu for different roles
 * Exclusion of menu items based on authorisation
 
@@ -49,7 +49,7 @@ Put in your Gemfile:
 
 Then type in your console:
 
-  bundle && rails g emenu:install 
+  bundle && rails g emenu:install
 
 If you are using Haml, put this in layout:
 
@@ -80,14 +80,14 @@ Add app/navigation to your autoload paths:
 == Gotchas
 Theme used is small part of http://themeforest.net/item/smooth-admin/101529. It's just for demonstration and if you plan to use it in your projects you'll have to pay for it. Since you can already steel it from original theme page I don't think I am doing anything wrong including it as a demo. On the other hand the author has not given me permission to do so(yet). All in all it might get a bit uglier if I have to make my own theme...
 
-Be aware that I've monkey patched String class with 'indent' method for my testing purposes. 
+Be aware that I've monkey patched String class with 'indent' method for my testing purposes.
 
 == TODO
 * Add quick links support that change according to main menu selection
 * Put authorisation hook that will enable complex authorisation rules for all menu items in one method
 
 == Contributing to emenu
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project

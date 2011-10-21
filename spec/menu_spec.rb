@@ -43,10 +43,10 @@ describe Menu do
   it 'should enforce menu keys uniqueness' do
     lambda { subject.add(:company) }.should raise_error("It's not allowed to have same menu keys: company")
   end
-  
+
   it 'should enforce keys uniqueness in colapslible items' do
-    lambda do 
-      subject.add(:napkin) 
+    lambda do
+      subject.add(:napkin)
       subject.items.first.add(:cars)
       subject.items.first.add(:cars)
     end.should raise_error("It's not allowed to have same menu keys: cars")
