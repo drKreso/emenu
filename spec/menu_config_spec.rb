@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe MenuConfig do
-  
+
   it 'should know how to mark selected menu' do
     subject.item :djuka
     subject.selected = :djuka
@@ -26,7 +26,7 @@ describe MenuConfig do
     subject.opened?(:napkin).should == false
     subject.selected = :cool_napkin
     subject.opened?(:products).should == true
-    subject.opened?(:napkin).should == true 
+    subject.opened?(:napkin).should == true
   end
 
   it 'should know to add menu' do
@@ -125,7 +125,7 @@ describe MenuConfig do
     subject.item :transportation do
         item :cars
         item :trains do
-          item :fast_trains 
+          item :fast_trains
           item :slow_trains
         end
     end
@@ -137,7 +137,7 @@ describe MenuConfig do
       menu.item :transportation do
         item :cars
         item :trains do
-          item :fast_trains 
+          item :fast_trains
           item :slow_trains
         end
       end

@@ -2,7 +2,7 @@ require 'rails/generators'
 
 module Emenu
     class InstallGenerator < Rails::Generators::Base
-      source_root File.expand_path('../templates', __FILE__)  
+      source_root File.expand_path('../templates', __FILE__)
 
 
       def copy_images
@@ -18,7 +18,7 @@ module Emenu
         copy_file 'stylesheets/emenu.css', 'public/stylesheets/emenu.css'
         copy_file 'stylesheets/reset.css', 'public/stylesheets/reset.css'
       end
-      
+
       def copy_default_menu
         copy_file 'default_menu/navigation.rb', 'app/navigation/navigation.rb'
       end
@@ -38,5 +38,5 @@ module Emenu
         puts "  You need to link 'reset.css' and 'emenu.css' from layout file"
         puts "  You need to link 'jquery-1.4.2.min.js' and 'emenu.js' from layot file"
       end
-    end  
+    end
 end

@@ -8,7 +8,7 @@ module Navigation
       menu.item :transportation do
         item :cars
         item :trains do
-          item :fast_trains 
+          item :fast_trains
           item :slow_trains
         end
         item :planes do
