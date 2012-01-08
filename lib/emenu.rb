@@ -1,6 +1,6 @@
 require 'action_view'
 
-require 'emenu/string.rb'
+require 'guerrilla_patch'
 require 'emenu/menu.rb'
 require 'emenu/menu_config.rb'
 

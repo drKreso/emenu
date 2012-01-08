@@ -22,6 +22,7 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     git (1.2.5)
+    guerrilla_patch (1.0.0)
     haml (3.1.2)
     i18n (0.5.0)
     jeweler (1.6.4)
@@ -65,6 +66,7 @@ DEPENDENCIES
   actionpack (~> 3.0.3)
   activesupport (~> 3.0.3)
   bundler (~> 1.0.0)
+  guerrilla_patch
   haml (~> 3.1.1)
   jeweler (~> 1.6.4)
   rcov
